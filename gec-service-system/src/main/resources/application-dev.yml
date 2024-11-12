@@ -1,0 +1,44 @@
+server:
+  port: 8085
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 查看日志
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/film?serverTimezone=Hongkong&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+#  处理前端时间显示问题
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    timeout: 1800000
+    jedis:
+      pool:
+        max-active: 20 #最大连接数
+        max-wait: -1    #最大阻塞等待时间(负数表示没限制)
+        max-idle: 5    #最大空闲
+        min-idle: 0     #最小空闲
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 100MB
+# 阿里配置
+al:
+  oss: #存储
+    endpoint: oss-cn-guangzhou.aliyuncs.com   # 域
+    accessKeyId:  LTAI5tJCEZ4pymxD4gMj1v7x  # 秘钥
+    accessKeySecret: gVpXPIrJI53vEP03hD5jDc44b2Kida # 秘钥
+    bucketName: everyday-movies  # 桶名
+    url: http://everyday-movies.oss-cn-guangzhou.aliyuncs.com  # 访问地址
+  vod: # 视频
+    regionId: cn-shanghai
+    accessKeyId: LTAI5tJCEZ4pymxD4gMj1v7x
+    accessKeySecret: gVpXPIrJI53vEP03hD5jDc44b2Kida
+
+
